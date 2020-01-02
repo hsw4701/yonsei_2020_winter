@@ -4,8 +4,6 @@ def solution(N):
     index=[]
     for i in range(len(b)):
         if int(b[i])==1:
-        
-        
             index.append(i)
    # print(index)
 
