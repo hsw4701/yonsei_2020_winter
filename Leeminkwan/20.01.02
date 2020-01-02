@@ -1,0 +1,224 @@
+Python 3.8.1 (tags/v3.8.1:1b293b6, Dec 18 2019, 22:39:24) [MSC v.1916 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> "I set {0} apples".format(3)
+'I set 3 apples'
+>>> "I eat {0} apples".format("five")
+'I eat five apples'
+>>> "I eat [0] apples".format(3)
+'I eat [0] apples'
+>>> " I set %03d apples %3"
+' I set %03d apples %3'
+>>> "I set %03d apples" %3
+'I set 003 apples'
+>>> "I eat %s apples" %3
+'I eat 3 apples'
+>>> number=3
+>>> "I eat {0} apples".format(number)
+'I eat 3 apples'
+>>> number=10
+>>> day="three"
+>>> "I ate {0} apples, so I was sick for {1} days." format(number,day)
+SyntaxError: invalid syntax
+>>> "I ate {0} apples, so I was sick for {1} days." .format(number,day)
+'I ate 10 apples, so I was sick for three days.'
+>>> "I eat %s apples" %0.1223221
+'I eat 0.1223221 apples'
+>>> "I eat %s apples" .float(3)
+Traceback (most recent call last):
+  File "<pyshell#13>", line 1, in <module>
+    "I eat %s apples" .float(3)
+AttributeError: 'str' object has no attribute 'float'
+>>> "{0:<10}".format("hi")
+'hi        '
+>>> "{2:<8}".format("hi")
+Traceback (most recent call last):
+  File "<pyshell#15>", line 1, in <module>
+    "{2:<8}".format("hi")
+IndexError: Replacement index 2 out of range for positional args tuple
+>>> "{0:<8}".format("hi")
+'hi      '
+>>> "{1:^10}".format("hi")
+Traceback (most recent call last):
+  File "<pyshell#17>", line 1, in <module>
+    "{1:^10}".format("hi")
+IndexError: Replacement index 1 out of range for positional args tuple
+>>> "I eat {1} apples". format(3)
+Traceback (most recent call last):
+  File "<pyshell#18>", line 1, in <module>
+    "I eat {1} apples". format(3)
+IndexError: Replacement index 1 out of range for positional args tuple
+>>> "I ate {0} apples. so I was sick for {1} days.".format(10,3)
+'I ate 10 apples. so I was sick for 3 days.'
+>>> "{0:<10}".format("hi")
+'hi        '
+>>> "{0:<10},{1:<10}".format(hi,bye)
+Traceback (most recent call last):
+  File "<pyshell#21>", line 1, in <module>
+    "{0:<10},{1:<10}".format(hi,bye)
+NameError: name 'hi' is not defined
+>>> "{0:<10},{1:>10}".format(hi,bye)
+Traceback (most recent call last):
+  File "<pyshell#22>", line 1, in <module>
+    "{0:<10},{1:>10}".format(hi,bye)
+NameError: name 'hi' is not defined
+>>> "{0:<10},{1:>10}".format("hi","bye")
+'hi        ,       bye'
+>>> "{0:<10},{1:<10}".format("hi","bye")
+'hi        ,bye       '
+>>> "{0:^10}".format("hi")
+'    hi    '
+>>> "{0:^10},{1:^12}".format("hi","bye")
+'    hi    ,    bye     '
+>>> "{0:!^10}".format("hi")
+'!!!!hi!!!!'
+>>> "{0:~<10}".format("bye")
+'bye~~~~~~~'
+>>> y=3.423121231
+>>> "{0:0.4f}".format(y)
+'3.4231'
+>>> "%-10.4f"%3.21636183
+'3.2164    '
+>>> y=3.12312738
+>>> "{0:0.4f}".format(y)
+'3.1231'
+>>> "%0.3f"%5.2514121
+'5.251'
+>>> "{{and}}".format{()
+		 
+SyntaxError: invalid syntax
+>>> "{{and}}".format()
+'{and}'
+>>> "{{and}}".format{}
+SyntaxError: invalid syntax
+>>> odd=[1,3,5,7,9]
+>>> a=[1,2,3]
+>>> a
+[1, 2, 3]
+>>> a[0]
+1
+>>> a[0]+a[2]
+4
+>>> a[-1]
+3
+>>> a=[1,2,3,['a','b','c']]
+>>> a[-1]
+['a', 'b', 'c']
+>>> a[0]
+1
+>>> a[3]
+['a', 'b', 'c']
+>>> a[-1][0]
+'a'
+>>> a[-1][1]
+'b'
+>>> a[-1][2]
+'c'
+>>> a=[1,2,['a','b',['Life','is']]]
+>>> a[-1][0]
+'a'
+>>> a[-1][-1][0]
+'Life'
+>>> a[0][1]
+Traceback (most recent call last):
+  File "<pyshell#54>", line 1, in <module>
+    a[0][1]
+TypeError: 'int' object is not subscriptable
+>>> a[0]
+1
+>>> a[1]
+2
+>>> a[2][2][1]
+'is'
+>>> a=[1,2,3,4,5]
+>>> a[0:2]
+[1, 2]
+>>> a="12345"
+>>> a[0:2]
+'12'
+>>> a=[1,2,3,['a','b','c'],4,5]
+>>> a[2:5]
+[3, ['a', 'b', 'c'], 4]
+>>> a[3][:2]
+['a', 'b']
+>>> a=[1,2,3]
+>>> b=[4,5,6]
+>>> a+b
+[1, 2, 3, 4, 5, 6]
+>>> a*b
+Traceback (most recent call last):
+  File "<pyshell#68>", line 1, in <module>
+    a*b
+TypeError: can't multiply sequence by non-int of type 'list'
+>>> a-b
+Traceback (most recent call last):
+  File "<pyshell#69>", line 1, in <module>
+    a-b
+TypeError: unsupported operand type(s) for -: 'list' and 'list'
+>>> a=[1,2,3]
+>>> a*3
+[1, 2, 3, 1, 2, 3, 1, 2, 3]
+>>> abc*3
+Traceback (most recent call last):
+  File "<pyshell#72>", line 1, in <module>
+    abc*3
+NameError: name 'abc' is not defined
+>>> a=[1,2,3]
+>>> a[2]+"hi"
+Traceback (most recent call last):
+  File "<pyshell#74>", line 1, in <module>
+    a[2]+"hi"
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+>>> str(a[2])+"hi"
+'3hi'
+>>> a=[1,2,3]
+>>> a[2]=4
+>>> a
+[1, 2, 4]
+>>> a[1:2]
+[2]
+>>> a[1:2]=['a','b','c']
+>>> a
+[1, 'a', 'b', 'c', 4]
+>>> a[1]=['a','b','c']
+>>> a
+[1, ['a', 'b', 'c'], 'b', 'c', 4]
+>>> a[1,2,]=['a','b','c']
+Traceback (most recent call last):
+  File "<pyshell#84>", line 1, in <module>
+    a[1,2,]=['a','b','c']
+TypeError: list indices must be integers or slices, not tuple
+>>> a[1,2]=['a','b','c']
+Traceback (most recent call last):
+  File "<pyshell#85>", line 1, in <module>
+    a[1,2]=['a','b','c']
+TypeError: list indices must be integers or slices, not tuple
+>>> 
+>>> a[1:2]
+[['a', 'b', 'c']]
+>>> a=[1,2,3]
+>>> a[1]=['a','b','c']
+>>> a
+[1, ['a', 'b', 'c'], 3]
+>>> a[1:2]=['a','b','c']
+>>> ads
+Traceback (most recent call last):
+  File "<pyshell#92>", line 1, in <module>
+    ads
+NameError: name 'ads' is not defined
+>>> a=[1,2,3]
+>>> a[1:2]=['a','b','c']
+>>> a
+[1, 'a', 'b', 'c', 3]
+>>> a=[1,2,3]
+>>> a
+[1, 2, 3]
+>>> a=[1,'a','b','c',4]
+>>> a[1:3]=[]
+>>> a
+[1, 'c', 4]
+>>> a
+[1, 'c', 4]
+>>> del a[1]
+>>> a
+[1, 4]
+>>> 
