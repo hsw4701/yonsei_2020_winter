@@ -1,0 +1,25 @@
+def solution(N):
+    a=bin(N)
+    b=a[2:]
+    index=[]
+    for i in range(len(b)):
+        if int(b[i])==1:
+        
+        
+            index.append(i)
+   # print(index)
+
+    len_index = len(index)
+    #print(len_index)
+
+    k_index=[]
+    for i in  range(len_index-1):
+        k=index[i+1]-index[i]-1
+        k_index.append(k)
+    if len_index==1:
+        return 0
+    elif max(k_index)==0:
+        return 0
+    else:
+        return max(k_index)
+    #return max(k_index)
