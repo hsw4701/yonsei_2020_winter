@@ -1,0 +1,15 @@
+def solution(N):
+    BB = bin(N)
+    B = BB[2:]
+    
+    one = []
+    for i, v in enumerate(B):
+        if v == '1':
+            one.append(i)
+    
+    gap = []
+    gap.append(0)
+    for k in range(len(one)-1):
+        gap.append(one[k+1]-one[k]-1)
+        
+    return max(gap)
