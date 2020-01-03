@@ -1,7 +1,0 @@
-def solution(A, K):
-    if len(A)==0:
-        return(A)
-    K=K%len(A)
-    return(A[-K:]+A[:-K])
-   
-#K가 empty 지정보다 위에있으면 오류남
