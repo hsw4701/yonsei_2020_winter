@@ -1,0 +1,9 @@
+def solution(A):
+    A_count={}
+    for a in A:
+        try:A_count[a] +=1
+        except: A_count[a]=1
+    
+    for i,ai in A_count.items():
+        if ai%2!=0:
+            return i
