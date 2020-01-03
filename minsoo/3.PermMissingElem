@@ -1,0 +1,6 @@
+def solution(A):
+    Ind = set(A)
+    for i in range(1,len(A)+2):
+        if not i in Ind:
+            return i
+            break
