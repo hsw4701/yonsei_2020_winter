@@ -1,0 +1,8 @@
+def solution(A):
+    Ind = []
+    for i in A:
+        if i in Ind:
+            Ind.remove(i)
+        else:
+            Ind.append(i)
+    return Ind[0]
