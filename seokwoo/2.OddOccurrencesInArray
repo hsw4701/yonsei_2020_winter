@@ -1,0 +1,33 @@
+#1
+B = sorted(A)
+print(B)
+
+for i in range(len(B)-1):
+    if len(B) ==0:
+        print(B[0])
+    if B[i] != B[i+1]:
+        if B[i] != B[i-1]:
+            print(B[i])
+
+#time에러뜸
+
+#2
+for i in range(0,len(B)-1,2):
+    if B[i] != B[i+1]:
+        if B[i] != B[i-1]:
+            print(B[i])
+            
+#이것도 조금더 빨라져야됨     
+        
+#아래는100%
+def solution(A):
+    B = sorted(A)
+
+    if len(B) == 1: #
+        return(B[0])
+
+    for i in range(0,len(B),2):
+        if i+1 == len(B):
+            return(B[i])
+        if B[i] != B[i+1]:
+            return(B[i])
