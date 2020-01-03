@@ -1,8 +1,20 @@
 def solution(A):
-    Ind = []
+    Ind = set()
     for i in A:
         if i in Ind:
             Ind.remove(i)
         else:
-            Ind.append(i)
-    return Ind[0]
+            Ind.add(i)
+    return list(Ind)[0]
+
+
+
+
+# def solution(A):
+#     Ind = []
+#     for i in A:
+#         if i in Ind:
+#             Ind.remove(i)
+#         else:
+#             Ind.append(i)
+#     return Ind[0]
