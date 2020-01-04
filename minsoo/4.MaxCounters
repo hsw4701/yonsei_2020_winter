@@ -1,0 +1,16 @@
+def solution(N, A):
+    dict_N = {'increment_key':0}
+    max_value = 0
+    for i in range(len(A)):
+        if A[i] < N + 1:
+            try:
+                dict_N[A[i]] += 1
+            except:
+                dict_N[A[i]] = 1
+        else:
+            max_value += max(dict_N.values())        # add the increment
+            dict_N = {'increment_key':0}
+    for i in range(1, N+1):
+        if not i in dict_N.keys():
+            dict_N[i] = 0
+    return [dict_N[i] + max_value for i in range(1, N+1)]
