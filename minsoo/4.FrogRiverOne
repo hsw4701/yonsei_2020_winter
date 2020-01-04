@@ -1,0 +1,10 @@
+def solution(X, A):
+    Ind_set = set()
+    i = 0
+    for j in range(len(A)):
+        if not A[j] in Ind_set:
+            i += 1
+            if i == X:
+                return j
+            Ind_set.add(A[j])
+    return -1
