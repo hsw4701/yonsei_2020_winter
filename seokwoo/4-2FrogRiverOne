@@ -1,0 +1,10 @@
+def solution(X, A):
+    B=set({})
+    for i,v in enumerate(A):
+        B.add(v)
+        if len(B) == X:
+            return(i)
+            break
+    return(-1)
+    
+    O(N)
