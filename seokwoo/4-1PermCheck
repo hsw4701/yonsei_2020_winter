@@ -1,0 +1,2 @@
+def solution(A):
+    return 1 if len(set(A)) == max(A) and len(A) == max(A) else 0
