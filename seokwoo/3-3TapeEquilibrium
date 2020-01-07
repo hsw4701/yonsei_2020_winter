@@ -9,3 +9,5 @@ def solution(A):
         SUM  -= A[i-1]
         diff.append(abs(ZERO-SUM))
     return min(diff)
+
+O(N)
