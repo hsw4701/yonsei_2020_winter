@@ -1,0 +1,11 @@
+def solution(A):
+    tail = sum(A)
+    count = 0
+    for i in range(len(A)):
+        if A[i] == 0:
+            count += tail
+        else:
+            tail -= 1
+        if count > 10**9:
+            return -1
+    return count
