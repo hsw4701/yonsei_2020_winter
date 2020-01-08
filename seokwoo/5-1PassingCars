@@ -1,0 +1,13 @@
+def solution(A):
+    East=0
+    West=sum(A)
+    for i in range(len(A)):
+        if A[i]==0:
+            East = East+West
+        if A[i]==1:
+            West -=1
+    if East > 10**9:
+        return -1
+    return (East)
+   
+O(N)
