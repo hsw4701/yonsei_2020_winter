@@ -1,0 +1,20 @@
+def solution(A):
+    Set_A=set(A)
+    Z=[]
+    if max(Set_A)<=0:
+        return 1
+    for a in Set_A:
+        if a>0:
+            Z.append(a)
+    N=[0]*(max(A))
+    for i in range(len(Z)):
+        N[Z[i]-1] +=1
+    N_sum=sum(N)
+    for i,v in enumerate(N):
+        if N_sum==len(N):
+            return len(N)+1
+        if v==0:
+            return i+1
+            break
+            
+O(N) or O(N * log(N))
