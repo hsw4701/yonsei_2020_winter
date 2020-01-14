@@ -31,3 +31,4 @@ def solution(S,P,Q):
     
     초기값을 0으로 두면(A0 = 0, C0 = 0, G0 = 0)
     solution('C',[0],[0])에서 오류남
+    전체적으로 단원 제목인 Prefix Sum에 대해서 알아야됨
