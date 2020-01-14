@@ -1,0 +1,33 @@
+def solution(S,P,Q):
+    len_S=len(S)
+    A=[0]*len_S
+    C=[0]*len_S
+    G=[0]*len_S
+    A0 = -1
+    C0 = -1
+    G0 = -1
+    Sol=[0]*len(Q)
+    for i,v in enumerate(S):
+        if v =='A' : A0=i
+        if v =='C' : C0=i
+        if v =='G' : G0=i
+        A[i]=A0
+        C[i]=C0
+        G[i]=G0
+    for i in range(len(Q)):
+        Sol[i]=4
+        if A[Q[i]]<=Q[i] and A[Q[i]]>=P[i]:
+            Sol[i]=1
+            continue
+        if C[Q[i]]<=Q[i] and C[Q[i]]>=P[i]:
+            Sol[i]=2
+            continue
+        if G[Q[i]]<=Q[i] and G[Q[i]]>=P[i]:
+            Sol[i]=3
+            continue
+            
+    return(Sol)
+    O(N + M)
+    
+    초기값을 0으로 두면(A0 = 0, C0 = 0, G0 = 0)
+    solution('C',[0],[0])에서 오류남
