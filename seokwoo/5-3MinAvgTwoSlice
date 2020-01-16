@@ -1,0 +1,57 @@
+#correct80%, O(N)
+def solution(A):
+    Avg0=(A[0]+A[1])/2
+    j=0
+    if len(A)==2:
+        return 0
+    for i in range(0,len(A)-2):
+        if (A[i]+A[i+1])/2 < Avg0:
+            Avg0 = (A[i]+A[i+1])/2
+            j = i
+    for i in range(0,len(A)-2):
+        if (A[i]+A[i+1]+A[i+2])/3 < Avg0:
+            Avg0 = ((A[i]+A[i+1]+A[i+2])/3)
+            j = i
+    return(j)
+#처음에 2개 단위로만 해도 될꺼라 생각했는데, best slice length 가 3인곳에서 답이 자꾸 틀려서 3개도 검사하는걸로 함
+
+#100%, O(N)
+def solution(A):
+    Avg0=(A[0]+A[1])/2
+    j=0
+    if len(A)==2:
+        return 0
+    for i in range(0,len(A)-1):
+        if (A[i]+A[i+1])/2 < Avg0:
+            Avg0 = (A[i]+A[i+1])/2
+            j = i
+    for i in range(0,len(A)-2):
+        if (A[i]+A[i+1]+A[i+2])/3 < Avg0:
+            Avg0 = ((A[i]+A[i+1]+A[i+2])/3)
+            j = i
+    return(j)
+    
+# 문제에서 Q<N이라길래 2개단위 검사할때 len(A)-2까지만 했는데, 딱 마지막포함하는 곳에서 틀려서 그냥 마지막까지 함
+
+#아래는 틀린답
+#correct 100%, O(N**2)
+A=[-3, -5, -8, -4, -10]
+def solution(A):
+    Sum = [0]*(len(A)+1)
+    for i in range(1,len(A)+1):
+        Sum[i] = Sum[i-1] + A[i-1]
+    Avg=[]
+    Idx=[]
+    for a in range(2,len(Sum)):
+        for b in range(0,a-1):
+            Avg.append((Sum[a]-Sum[b])/(a-b))
+            Idx.append(b)
+    print(Avg)
+    Min=min(Avg)
+    Sol=[]
+    for i,v in enumerate(Avg):
+        if v == Min:
+            Sol.append(Idx[i])
+            break
+    return(Sol[0])
+solution(A)
