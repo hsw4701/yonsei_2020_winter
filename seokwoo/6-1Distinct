@@ -1,0 +1,3 @@
+def solution(A):
+    return len(set(A))
+O(N*log(N)) or O(N)
