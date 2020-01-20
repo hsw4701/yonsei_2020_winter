@@ -1,0 +1,18 @@
+def solution(A):
+    B=[]
+    for i,v in enumerate(A):
+        B.append((i-v,'L'))
+        B.append((i+v,'R'))
+    B.sort()
+    Left=0
+    overlap=0
+    for i,v in enumerate(B):
+        if v[1] == 'L':
+            Left += overlap
+            overlap+=1
+        if v[1] == 'R' :
+            overlap-=1
+    return -1 if Left>10000000 else Left
+    
+    
+O(N*log(N)) or O(N)
