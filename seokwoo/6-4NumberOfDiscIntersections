@@ -6,13 +6,16 @@ def solution(A):
     B.sort()
     Left=0
     overlap=0
-    for i,v in enumerate(B):
-        if v[1] == 'L':
+    for x in B:
+        if x[1] == 'L':
             Left += overlap
             overlap+=1
-        if v[1] == 'R' :
+        if x[1] == 'R' :
             overlap-=1
-    return -1 if Left>10000000 else Left
+    if Left>10000000:
+        return -1
+    else:
+        return Left
     
     
 O(N*log(N)) or O(N)
