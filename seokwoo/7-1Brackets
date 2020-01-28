@@ -1,0 +1,22 @@
+def solution(S):
+    Open=[]
+    for s in S:
+        if s=="(" or s=="[" or s=="{":
+            Open.append(s)
+        else:
+            if len(Open)==0:
+                return 0
+            Pop = Open.pop()
+            if Pop == "(":
+                if s != ")":
+                    return 0
+            elif Pop == "{":
+                if s != "}":
+                    return 0
+            elif Pop == "[":
+                if s != "]":
+                    return 0
+    if len(Open)>0:
+        return 0
+    return 1
+    O(N)
