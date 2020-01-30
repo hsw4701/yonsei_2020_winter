@@ -1,0 +1,16 @@
+def solution(S):
+    Open=[]
+    for s in S:
+        if s=="(":
+            Open.append(s)
+        else:
+            if len(Open)==0:
+                return 0
+            Pop = Open.pop()
+            if Pop == "(":
+                if s != ")":
+                    return 0
+    if len(Open)>0:
+        return 0
+    return 1
+    O(N)
