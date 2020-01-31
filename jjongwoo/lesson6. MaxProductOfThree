@@ -1,0 +1,12 @@
+import heapq
+
+def solution(A):
+    heapq.heapify(A)
+    
+    large = heapq.nlargest(3, A)
+    large1, large2, large3 = large[0], large[1], large[2]
+    
+    small = heapq.nsmallest(2, A)
+    small1, small2 = small[0], small[1]
+    
+    return max(large1 * large2 * large3, small1 * small2 * large1)
