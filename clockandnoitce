@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Homepage</title>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('current-time').innerText = now.toLocaleTimeString();
+        }
+        setInterval(updateTime, 1000); // Update time every second
+        window.onload = updateTime; // Set time on page load
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        #current-time {
+            font-size: 15em;
+            color: #333;
+            margin-top: 0px;
+        }
+        #announcement {
+            margin-top: 10px;
+            font-size: 2em;
+            color: #333;
+            width: 75%;
+            max-width: 1800px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            text-align: left;
+            background-color: #f9f9f9;
+            line-height: 0.5;
+            max-height: 600px;
+        }
+        h1 {
+              font-size: 4em; /* 제목 글자 크기 */
+              margin: 5px 0; /* Adjust top and bottom margin */
+              padding: 0; /* Remove padding */
+        }
+    </style>
+</head>
+<body>
+    <h1 contenteditable="true">과목명 - 중간/기말고사</h1>
+    <div id="current-time"></div>
+    <div id="announcement" contenteditable="true">
+        <p style="text-align: center;font-weight: bold; font-size: 1.5em;">시험 시간 : 00:00 ~ 00:00</p>
+        <p>1.공지사항 입력</p>
+        <p>2.공지사항 입력</p>
+        <p>3.공지사항 입력</p>
+        <p>4.공지사항 입력</p>
+        <p>5.공지사항 입력</p>
+        <p>6.공지사항 입력</p>
+        <p>7.공지사항 입력</p>
+        <p>8.공지사항 입력</p>
+        <p>9.공지사항 입력</p>
+        <p>10.공지사항 입력</p>
+
+    </div>
+</body>
+</html>
